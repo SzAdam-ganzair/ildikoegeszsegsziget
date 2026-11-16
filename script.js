@@ -1,7 +1,5 @@
 /* Ildikóegészségsziget – egyoldalas változat */
 
-const PHONE_HREF = "tel:+36308695321";
-const FACEBOOK_URL = "https://www.facebook.com/ildikomasszazs";
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ---------- Fejléc: görgetés után tömör háttér (asztali nézet) ---------- */
@@ -110,20 +108,6 @@ tabs.forEach((tab, index) => {
     event.preventDefault();
     selectTab(tabs[(index + step + tabs.length) % tabs.length], true);
   });
-});
-
-// Időpontkérő gombok a fülek paneljeinek aljára
-document.querySelectorAll(".tabpanel").forEach((panel) => {
-  const cta = document.createElement("div");
-  cta.className = "t-cta";
-  cta.innerHTML = `
-    <a class="btn btn-primary" href="${PHONE_HREF}" aria-label="Időpontot kérek telefonon: ${panel.dataset.title}">
-      <svg aria-hidden="true"><use href="#i-phone"/></svg>Időpontot kérek
-    </a>
-    <a class="btn btn-quiet" href="${FACEBOOK_URL}" target="_blank" rel="noopener">
-      <svg aria-hidden="true"><use href="#i-chat"/></svg>Üzenet Facebookon
-    </a>`;
-  (panel.querySelector(".t-text") ?? panel).append(cta);
 });
 
 /* ---------- Részletező lap ---------- */
