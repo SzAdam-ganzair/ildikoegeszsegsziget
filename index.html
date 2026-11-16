@@ -2,7 +2,7 @@
 <html lang="hu">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Ildikóegészségsziget | Masszázs, aromaterápia, alakformálás és BEMER Szegeden</title>
     <meta
       name="description"
@@ -10,159 +10,798 @@
     >
     <meta name="theme-color" content="#42135b">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="hu_HU">
     <meta property="og:title" content="Ildikóegészségsziget – nyugalom, érintés, egyensúly">
     <meta property="og:description" content="Masszázsok, aromaterápia, alakformálás, BEMER érterápia és wellness-felmérések Szegeden, a Teréz utca 13. alatt.">
     <meta property="og:image" content="nyitokep_hero_ai.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="images/hero-1000.webp" imagesrcset="images/hero-1000.webp 1000w, images/hero.webp 1900w" imagesizes="100vw">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <!-- Ikonkészlet -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-lotus" viewBox="0 0 64 64"><path d="M32 54V34M32 39c-8 0-15-6-17-15 9-1 16 2 21 9M32 37c8 0 15-6 17-15-9-1-16 2-21 9M32 32c-6-6-6-15 0-23 6 8 6 17 0 23ZM22 54h20"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M21 16.4v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 1.8 3.7 2 2 0 0 1 3.8 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L7.8 9.6a16 16 0 0 0 6.6 6.6l1.2-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.7-5.2A8.4 8.4 0 1 1 21 11.5Z"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M12 21V11M12 15c-4.2 0-7.2-2.8-8-7 4.7-.4 8 1.2 10 5M12 13c4.2 0 7.2-2.8 8-7-4.7-.4-8 1.2-10 5M12 10c-2.4-2.6-2.4-6 0-9 2.4 3 2.4 6.4 0 9Z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.800-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-foot" viewBox="0 0 32 32"><path d="M12 29c-3 0-5-2-5-5 0-4 2-6 2-10 0-5 2-9 6-9 3 0 4 3 4 6 0 4-2 6-2 10 0 5-2 8-5 8Z"/><circle cx="21" cy="5" r="1.6"/><circle cx="24.5" cy="8" r="1.4"/><circle cx="26" cy="12" r="1.2"/></symbol>
+      <symbol id="i-head" viewBox="0 0 120 120"><path d="M60 18c22 0 36 15 36 36 0 14-7 22-7 32v12H60M60 18c-22 0-36 15-36 36 0 7 3 11 3 17l-7 11h10v16h30M48 50c4-7 20-7 24 0M80 30c6 4 9 10 10 16"/></symbol>
+    </svg>
+
     <header class="site-header" id="top">
-      <nav class="nav" aria-label="Fő navigáció">
-        <a class="brand" href="#top" aria-label="Ildikóegészségsziget kezdőlap">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 64 64" focusable="false">
-              <path d="M32 56V31" />
-              <path d="M32 41c-7 0-13-5-15-12 8-1 14 1 18 7" />
-              <path d="M32 37c7 0 13-5 15-12-8-1-14 1-18 7" />
-              <path d="M32 30c-5-5-5-13 0-20 5 7 5 15 0 20Z" />
-              <path d="M22 56h20" />
-            </svg>
-          </span>
-          <span>
-            <strong>Ildikóegészségsziget</strong>
-            <small>nyugalom, érintés, egyensúly</small>
-          </span>
-        </a>
-
-        <button class="menu-toggle" type="button" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="menu" id="menu">
-          <a href="#szolgaltatasok">Kezelések</a>
-          <a href="#masszazsok">Masszázsok</a>
-          <a href="#aroma">Aromaterápia</a>
-          <a href="#arc-fej">Arc &amp; fej</a>
-          <a href="#alakformalas">Alakformálás</a>
-          <a href="#bemer">BEMER</a>
-          <a href="#felmeresek">Felmérések</a>
-          <a class="menu-cta" href="#kapcsolat">Időpontfoglalás</a>
-        </div>
+      <a class="brand" href="#top" aria-label="Ildikóegészségsziget – vissza a lap tetejére">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-lotus"/></svg>
+        <span class="brand-text">
+          <strong>Ildikóegészségsziget</strong>
+          <small>Szeged · Teréz utca 13.</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Fő navigáció">
+        <a href="#szolgaltatasok">Kezelések</a>
+        <a href="#rolam">A szigetről</a>
+        <a href="#kapcsolat">Kapcsolat</a>
       </nav>
-      <div class="scroll-progress" aria-hidden="true"></div>
+      <a class="btn header-call" href="tel:+36308695321" aria-label="Hívás: +36 30 869 5321">
+        <svg aria-hidden="true"><use href="#i-phone"/></svg>
+        <span>+36 30 869 5321</span>
+      </a>
     </header>
-
-    <nav class="mobile-quick-nav" aria-label="Gyors navigáció mobilon">
-      <a href="#szolgaltatasok">
-        <span aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false">
-            <path d="M12 21V11" />
-            <path d="M12 15c-4.2 0-7.2-2.8-8-7 4.7-.4 8 1.2 10 5" />
-            <path d="M12 13c4.2 0 7.2-2.8 8-7-4.7-.4-8 1.2-10 5" />
-            <path d="M12 10c-2.4-2.6-2.4-6 0-9 2.4 3 2.4 6.4 0 9Z" />
-          </svg>
-        </span>
-        <strong>Kezelések</strong>
-      </a>
-      <a href="#masszazsok">
-        <span aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false">
-            <path d="M7 11V6.5a2 2 0 0 1 4 0V11" />
-            <path d="M11 10V5.5a2 2 0 0 1 4 0V12" />
-            <path d="M15 11V7a2 2 0 0 1 4 0v8.5A6.5 6.5 0 0 1 12.5 22H11a6 6 0 0 1-4.8-2.4L3 15.5a2.1 2.1 0 0 1 3.2-2.7L8 15" />
-          </svg>
-        </span>
-        <strong>Masszázs</strong>
-      </a>
-      <a href="#kapcsolat">
-        <span aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false">
-            <path d="M21 16.4v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 1.8 3.7 2 2 0 0 1 3.8 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L7.8 9.6a16 16 0 0 0 6.6 6.6l1.2-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z" />
-          </svg>
-        </span>
-        <strong>Kapcsolat</strong>
-      </a>
-    </nav>
 
     <main>
       <!-- ============ HERO ============ -->
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-media" role="img" aria-label="Levendulamező naplementében"></div>
-        <div class="hero-content">
-          <div class="hero-brand-panel">
-            <div class="hero-lotus" aria-hidden="true">
-              <svg viewBox="0 0 64 64" focusable="false">
-                <path d="M32 54V34" />
-                <path d="M32 39c-8 0-15-6-17-15 9-1 16 2 21 9" />
-                <path d="M32 37c8 0 15-6 17-15-9-1-16 2-21 9" />
-                <path d="M32 32c-6-6-6-15 0-23 6 8 6 17 0 23Z" />
-                <path d="M22 54h20" />
-              </svg>
-            </div>
-            <h1 class="hero-brand-name" id="hero-title">Ildikó</h1>
-            <p class="hero-brand-subtitle">Egészség és Masszázs Sziget</p>
-            <p class="hero-brand-line">Testi-lelki egyensúly</p>
-            <p class="hero-brand-support">természetes megoldásokkal</p>
-            <div class="hero-service-icons" aria-label="Kiemelt szolgáltatások">
-              <span>
-                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-                  <path d="M16 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
-                  <path d="M9 25c1-4 4-7 7-7s6 3 7 7" />
-                  <path d="M6 19c2.5 1.2 4.4 3.1 5.5 5.5" />
-                  <path d="M26 19c-2.5 1.2-4.4 3.1-5.5 5.5" />
-                </svg>
-                <strong>Masszázsok</strong>
-              </span>
-              <span>
-                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-                  <path d="M16 5c5 5 8 9 8 14a8 8 0 0 1-16 0c0-5 3-9 8-14Z" />
-                  <path d="M12 21c2 2 6 2 8 0" />
-                </svg>
-                <strong>Aromaterápia</strong>
-              </span>
-              <span>
-                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-                  <path d="M10 6c-3 4-3 16 0 20" />
-                  <path d="M22 6c3 4 3 16 0 20" />
-                  <path d="M16 9v14" />
-                </svg>
-                <strong>Alakformálás</strong>
-              </span>
-              <span>
-                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-                  <path d="M16 27s-10-6-10-14a6 6 0 0 1 10-4 6 6 0 0 1 10 4c0 8-10 14-10 14Z" />
-                  <path d="M16 11v8" />
-                  <path d="M12 15h8" />
-                </svg>
-                <strong>Regeneráció</strong>
-              </span>
-            </div>
-          </div>
+        <img
+          class="hero-img"
+          src="images/hero-1000.webp"
+          srcset="images/hero-1000.webp 1000w, images/hero.webp 1900w"
+          sizes="100vw"
+          alt=""
+          fetchpriority="high"
+        >
+        <div class="hero-inner">
+          <p class="hero-kicker">Ildikó Egészség és Masszázs Sziget</p>
+          <h1 id="hero-title">Testi-lelki egyensúly <em>természetes megoldásokkal</em></h1>
+          <p class="hero-sub">
+            Masszázsok, aromaterápia, alakformálás, BEMER érterápia és wellness-felmérések
+            Szeged belvárosában.
+          </p>
           <div class="hero-actions">
-            <a class="button primary" href="#szolgaltatasok">Kezelések megtekintése</a>
-            <a class="button ghost" href="#kapcsolat">Időpontot kérek</a>
+            <a class="btn btn-light" href="#szolgaltatasok">Kezelések megtekintése</a>
+            <a class="btn btn-glass" href="#kapcsolat">Időpontot kérek</a>
           </div>
+          <ul class="hero-facts">
+            <li><strong>18</strong> kezelés és felmérés</li>
+            <li><strong>doTERRA</strong> illóolajok</li>
+            <li><strong>Időpont</strong> egyeztetéssel</li>
+          </ul>
         </div>
       </section>
 
-      <!-- ============ INTRO ============ -->
-      <section class="intro">
-        <div>
-          <p class="eyebrow">Életfa szemlélet</p>
-          <h2>Gyökerek, figyelem, friss energia</h2>
+      <!-- ============ KEZELÉSEK ============ -->
+      <section class="treatments" id="szolgaltatasok" aria-labelledby="services-title">
+        <div class="section-head">
+          <p class="eyebrow">Kezelések</p>
+          <h2 id="services-title">Egy sziget, több út a feltöltődéshez</h2>
+          <p>Koppints egy kezelésre, és megnyílik a részletes leírás.</p>
         </div>
-        <div>
+
+        <nav class="chipbar" aria-label="Kezeléskategóriák">
+          <div class="chipbar-scroll">
+            <a href="#masszazsok">Masszázs</a>
+            <a href="#aroma">Aromaterápia</a>
+            <a href="#arc-fej">Arc &amp; fej</a>
+            <a href="#alakformalas">Alakformálás</a>
+            <a href="#regeneracio">Regeneráció</a>
+            <a href="#felmeresek">Felmérések</a>
+          </div>
+        </nav>
+
+        <!-- ---------- Masszázs ---------- -->
+        <section class="cat" id="masszazsok" aria-labelledby="cat-masszazs">
+          <header class="cat-head">
+            <span class="cat-num" aria-hidden="true">01</span>
+            <h3 id="cat-masszazs">Masszázs &amp; relax</h3>
+            <p>Érintések a frissebb, könnyedebb közérzetért.</p>
+          </header>
+          <div class="cat-list">
+            <details class="t-card" id="gyuro-masszazs">
+              <summary>
+                <img class="t-thumb" src="images/gyuro-masszazs-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Gyúró, izomlazító masszázs</strong>
+                  <span>Letapadt, feszes izmok fellazítása – nyak, váll, derék.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/gyuro-masszazs.webp"><img src="images/gyuro-masszazs-520.webp" srcset="images/gyuro-masszazs-520.webp 520w, images/gyuro-masszazs.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Gyúró, izomlazító masszázs nyugodt wellness környezetben" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    A mindennapi stressz, az ülőmunka, a fizikai terhelés és a helytelen testtartás
+                    gyakran vezet izomfeszüléshez, fájdalomhoz és mozgásbeszűküléshez. A kezelés célja a
+                    letapadt, feszes izmok fellazítása, a vérkeringés fokozása és az izmok
+                    regenerációjának támogatása.
+                  </p>
+                  <p>
+                    Segíthet csökkenteni a nyak-, váll- és derékfájdalmakat, és javíthatja a mozgás
+                    szabadságát. Ideális ülőmunkát vagy fizikai munkát végzőknek és sportolóknak.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="relaxalo-masszazs">
+              <summary>
+                <img class="t-thumb" src="images/relaxalo-masszazs-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Frissítő, relaxáló masszázs</strong>
+                  <span>Stressz és fáradtság ellen, a testi-lelki feltöltődésért.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/relaxalo-masszazs.webp"><img src="images/relaxalo-masszazs-520.webp" srcset="images/relaxalo-masszazs-520.webp 520w, images/relaxalo-masszazs.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Relaxáló hátmasszázs orchideákkal és gyertyákkal" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    Stressz, fáradtság, feszes nyak- és hátizmok? A frissítő, relaxáló masszázs segít
+                    ellazítani a túlterhelt izmokat, enyhíteni a mindennapi feszültséget, és támogatja a
+                    testi-lelki feltöltődést.
+                  </p>
+                  <p>
+                    A kellemes masszázsfogások elősegítik a relaxációt, javíthatják a közérzetet, és
+                    segítenek kiszakadni a rohanó hétköznapokból.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="nyirokmasszazs">
+              <summary>
+                <img class="t-thumb" src="images/nyirokmasszazs-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Nyirokmasszázs</strong>
+                  <span>Gyengéd, ritmikus mozdulatok a nyirokáramlás támogatására.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/nyirokmasszazs.webp"><img src="images/nyirokmasszazs-520.webp" srcset="images/nyirokmasszazs-520.webp 520w, images/nyirokmasszazs.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Nyirokmasszázs a lábon" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    A nyirokmasszázs gyengéd, ritmikus mozdulatokkal támogatja a nyirokfolyadék áramlását,
+                    és segíti a szövetek közötti folyadék elvezetését.
+                  </p>
+                  <p>
+                    Megfelelő alkalmazás esetén hozzájárulhat a duzzanat mérsékléséhez, különösen
+                    nyiroködéma kezelésében.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="talpmasszazs">
+              <summary>
+                <span class="t-thumb t-icon" aria-hidden="true"><svg><use href="#i-foot"/></svg></span>
+                <span class="t-head">
+                  <strong>Talpmasszázs</strong>
+                  <span>A talp zónáinak masszírozása – lelassulás, feszültségoldás.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-text">
+                  <p>
+                    A talpon lévő zónák masszírozása reflexhatást válthat ki, miközben segít lelassulni és
+                    kiengedni a nap végére felgyűlt feszültséget. A lábon több tízezer idegvégződés
+                    található, ezért a talpmasszázs az egész testre kellemesen ható élmény lehet.
+                  </p>
+                  <ul class="dots">
+                    <li>Támogathatja a vérkeringés élénkebb működését.</li>
+                    <li>Segíthet a feszültségoldásban.</li>
+                    <li>Jó választás első masszázsélménynek is.</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="kopolyozes">
+              <summary>
+                <img class="t-thumb" src="images/kopolyozes-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Köpölyözés</strong>
+                  <span>Ősi, vákuumos technika a véráramlás fokozására.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/kopolyozes.webp"><img src="images/kopolyozes-520.webp" srcset="images/kopolyozes-520.webp 520w, images/kopolyozes.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Köpölyözés vákuumos köpölyökkel a háton" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    A köpölyözés egy ősi technikán alapuló kezelés, amely során a köpölyök vákuumhatással
+                    megemelik a bőrt és az alatta lévő szöveteket.
+                  </p>
+                  <ul class="dots">
+                    <li>Fokozza a helyi véráramlást.</li>
+                    <li>Segíthet az izmok ellazításában.</li>
+                    <li>Így csökkentheti a fájdalmat.</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="access-bars">
+              <summary>
+                <img class="t-thumb" src="images/access-bars-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Access Bars®</strong>
+                  <span>Gyengéd érintések a fejen a mély ellazulásért.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/access-bars.webp"><img src="images/access-bars-520.webp" srcset="images/access-bars-520.webp 520w, images/access-bars.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Gyengéd érintés a fej pontjain relaxáció közben" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p class="lead">Egész nap fáradt vagy, miközben az agyad túlpörög?</p>
+                  <p>
+                    Az Access Bars® egy gyengéd érintéseken alapuló relaxációs módszer, amely során a fej
+                    meghatározott pontjait finoman érintjük. A módszer célja a mély ellazulás elősegítése,
+                    a stresszes hétköznapokból való kiszakadás és a nyugodt, befelé figyelő állapot
+                    megteremtése.
+                  </p>
+                  <ul class="questions">
+                    <li>Sokat stresszelsz, aggódsz?</li>
+                    <li>Nehezen kapcsolsz ki a nap végén?</li>
+                    <li>Vágysz egy kis csendre a fejedben?</li>
+                  </ul>
+                  <ul class="pills">
+                    <li>Mély relaxáció</li>
+                    <li>Stresszoldó élmény</li>
+                    <li>Tisztább, rendezettebb gondolatok</li>
+                    <li>Befelé figyelő, nyugodt állapot</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- ---------- Aromaterápia ---------- -->
+        <section class="cat" id="aroma" aria-labelledby="cat-aroma">
+          <header class="cat-head">
+            <span class="cat-num" aria-hidden="true">02</span>
+            <h3 id="cat-aroma">Aromaterápia</h3>
+            <p>Amikor az érintés és az illatok találkoznak.</p>
+          </header>
+          <div class="cat-list">
+            <details class="t-card" id="aromatouch">
+              <summary>
+                <img class="t-thumb" src="images/aromatouch-olajok-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>doTERRA AromaTouch®</strong>
+                  <span>Nyolc illóolaj és harmonikus érintések – illatos utazás.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/aromatouch-olajok.webp"><img src="images/aromatouch-olajok-520.webp" srcset="images/aromatouch-olajok-520.webp 520w, images/aromatouch-olajok.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="A nyolc AromaTouch® doTERRA illóolaj: Balance, Lavender, Melaleuca, On Guard, AromaTouch, Deep Blue, Wild Orange, Peppermint" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p class="lead">Engedd el a külvilág zaját, és merülj el a nyugalom különleges világában! 🌿</p>
+                  <p>
+                    A nyolc gondosan kiválasztott doTERRA illóolaj és a gyengéd, harmonikus érintések
+                    egyedülálló élménnyé varázsolják ezt a kezelést. Segít ellazulni, lelassulni, és olyan
+                    különleges, békés lelkiállapotba kerülni, ahol végre önmagadra figyelhetsz.
+                  </p>
+                  <p>
+                    Nem csupán egy masszázs, hanem egy illatos utazás a testi-lelki harmónia felé. Add át
+                    magad az élménynek, és tapasztald meg a valódi kikapcsolódást!
+                  </p>
+                  <h4>A nyolc olaj</h4>
+                  <ul class="pills">
+                    <li>Balance</li>
+                    <li>Lavender</li>
+                    <li>Melaleuca (Tea Tree)</li>
+                    <li>On Guard</li>
+                    <li>AromaTouch</li>
+                    <li>Deep Blue</li>
+                    <li>Wild Orange</li>
+                    <li>Peppermint</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="aromaterapias-masszazs">
+              <summary>
+                <img class="t-thumb" src="images/aromaterapias-masszazs-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>doTERRA aromaterápiás masszázs</strong>
+                  <span>Masszázsfogások és illóolajok harmóniája.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/aromaterapias-masszazs.webp"><img src="images/aromaterapias-masszazs-520.webp" srcset="images/aromaterapias-masszazs-520.webp 520w, images/aromaterapias-masszazs.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Aromaterápiás masszázs doTERRA illóolajokkal" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p class="lead">Lépj ki a hétköznapok rohanásából, és merülj el az illatok különleges világában! 🌿</p>
+                  <p>
+                    A kellemes masszázsfogások és a gondosan kiválasztott doTERRA illóolajok harmonikus
+                    találkozása segít megteremteni a nyugalom és az ellazulás pillanatait. Az illatok
+                    hatással lehetnek a hangulatodra, támogathatják a relaxációt, és különleges érzékszervi
+                    élménnyé tehetik a masszázst.
+                  </p>
+                  <p>
+                    Több mint kikapcsolódás: egy illatos utazás, ahol a tested ellazul, a lelked pedig
+                    megpihen. Engedd, hogy az érintés és az illatok harmóniája feltöltsön!
+                  </p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- ---------- Arc & fej ---------- -->
+        <section class="cat" id="arc-fej" aria-labelledby="cat-arc">
+          <header class="cat-head">
+            <span class="cat-num" aria-hidden="true">03</span>
+            <h3 id="cat-arc">Arc &amp; fej</h3>
+            <p>Énidő, ragyogás és könnyű fej.</p>
+          </header>
+          <div class="cat-list">
+            <details class="t-card" id="spa-arckezeles">
+              <summary>
+                <img class="t-thumb" src="images/spa-arckezeles-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>SPA Prémium arckezelés</strong>
+                  <span>Arctisztítás, RF-kezelés, gua sha és illóolajok.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/spa-arckezeles.webp"><img src="images/spa-arckezeles-520.webp" srcset="images/spa-arckezeles-520.webp 520w, images/spa-arckezeles.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Arcmasszázs SPA kezelés közben" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    Szeretnél üdébb, ragyogóbb arcbőrt és egy igazán különleges énidőt? A kezelés során az
+                    arctisztítást, a gondosan kiválasztott doTERRA illóolajokat, a rádiófrekvenciás (RF)
+                    kezelést és a gua sha arcmasszázst ötvözzük egy komplex, kényeztető élményben.
+                  </p>
+                  <h4>🌿 Miben segíthet?</h4>
+                  <ul class="dots">
+                    <li><strong>RF-kezelés:</strong> hozzájárulhat a bőr feszesebb megjelenéséhez.</li>
+                    <li><strong>Gua sha:</strong> gyengéd masszázstechnikával segítheti az arc ellazulását, és frissebb, üdébb megjelenést kölcsönözhet.</li>
+                    <li><strong>doTERRA illóolajok:</strong> különleges aromaterápiás élménnyé varázsolják a kezelést.</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="fejmasszazs">
+              <summary>
+                <span class="t-thumb t-icon" aria-hidden="true"><svg><use href="#i-head"/></svg></span>
+                <span class="t-head">
+                  <strong>Energetizáló fejmasszázs gua shával</strong>
+                  <span>Ha zsong a fejed: finom simítások a fejbőrön és a nyakon.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-text">
+                  <p>
+                    Zsong a fejed, feszült vagy, és úgy érzed, szükséged van egy kis kikapcsolódásra? A
+                    gyengéd fejmasszázs és a gua sha eszközzel végzett, finom simító mozdulatok
+                    segíthetnek ellazítani a fejbőr és a nyak környékét, enyhíteni a mindennapi
+                    feszültségérzetet, és kellemes, frissítő élményt nyújthatnak.
+                  </p>
+                  <h4>🌸 Miben segíthet?</h4>
+                  <ul class="dots">
+                    <li>Elősegíti a relaxációt és a testi-lelki ellazulást.</li>
+                    <li>Segít enyhíteni a fej, a nyak és a váll környékén érzett feszültséget.</li>
+                    <li>Serkenti a kezelt terület helyi vérkeringését.</li>
+                    <li>Segít kiszakadni a mindennapi rohanásból, és újra önmagadra figyelni.</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- ---------- Alakformálás ---------- -->
+        <section class="cat" id="alakformalas" aria-labelledby="cat-alak">
+          <header class="cat-head">
+            <span class="cat-num" aria-hidden="true">04</span>
+            <h3 id="cat-alak">Alakformálás</h3>
+            <p>Vágás és műtét nélkül a feszesebb, simább bőrért – comb, fenék, csípő, has.</p>
+          </header>
+          <div class="cat-list">
+            <details class="t-card" id="cellulitmasszazs">
+              <summary>
+                <img class="t-thumb" src="images/cellulitmasszazs-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Cellulitmasszázs</strong>
+                  <span>Intenzív fogások, krémek és köpölyözés a narancsbőr ellen.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/cellulitmasszazs.webp"><img src="images/cellulitmasszazs-520.webp" srcset="images/cellulitmasszazs-520.webp 520w, images/cellulitmasszazs.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Narancsbőr a combon" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    Célzott, intenzív masszázsfogásokkal segíti a helyi vér- és nyirokkeringést, valamint
+                    a szövetek mobilizálását. A kezelést speciális, zsírégetőként forgalmazott krémekkel
+                    és köpölyözéssel egészítjük ki, hogy fokozzuk az intenzitását és támogassuk a bőr
+                    megjelenésének javítását.
+                  </p>
+                  <p>
+                    A comb, a fenék és a csípő területére összpontosító kezelés segíthet mérsékelni a
+                    narancsbőrt, és hozzájárulhat a simább bőrfelszínhez.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="maderoterapia">
+              <summary>
+                <img class="t-thumb pos-low" src="images/maderoterapia-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Maderoterápia</strong>
+                  <span>Masszázs anatómiai kialakítású faeszközökkel.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/maderoterapia.webp"><img class="pos-low" src="images/maderoterapia-520.webp" srcset="images/maderoterapia-520.webp 520w, images/maderoterapia.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Maderoterápia fa henger eszközzel a combon" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    Speciális, anatómiai kialakítású faeszközökkel végzett masszázstechnika. A célzott,
+                    ritmikus mozdulatok serkentik a kezelt terület helyi vérkeringését, segítik a szövetek
+                    mobilizálását, és hozzájárulnak a bőr simább, feszesebb megjelenéséhez.
+                  </p>
+                  <p>A kezelés során elsősorban a comb, a fenék és a csípő területére összpontosítunk.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="kavitacio">
+              <summary>
+                <img class="t-thumb" src="images/kavitacio-kezeles-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Kavitációs zsírbontás</strong>
+                  <span>Ultrahangos alakformálás a lokális zsírpárnákra.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/kavitacio-kezeles.webp"><img src="images/kavitacio-kezeles-520.webp" srcset="images/kavitacio-kezeles-520.webp 520w, images/kavitacio-kezeles.webp 1100w" sizes="(min-width: 900px) 400px, 80vw" alt="Kavitációs ultrahangos fej a hason kezelés közben" loading="lazy"></button>
+                  <button type="button" data-full="images/kavitacio-keszulek.webp"><img class="contain" src="images/kavitacio-keszulek-520.webp" alt="Kavitációs és lipolézeres kezelőkészülék" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    Vágás és műtét nélküli esztétikai és alakformáló eljárás, amely a lokális zsírpárnák és
+                    a narancsbőr csökkentésére szolgál.
+                  </p>
+                  <h4>Hogyan működik?</h4>
+                  <ol class="steps">
+                    <li>
+                      <strong>Ultrahangos hullámok</strong>
+                      A berendezés alacsony frekvenciájú (általában 36–40 kHz körüli) ultrahangot bocsát ki, amely mikrobuborékokat hoz létre a zsírsejtek közötti térben.
+                    </li>
+                    <li>
+                      <strong>Sejtfal roncsolása</strong>
+                      A buborékok összeroppanásakor keletkező nyomásváltozás (kavitáció) megroppantja a zsírsejtek membránját.
+                    </li>
+                    <li>
+                      <strong>Kiürülés</strong>
+                      A felszabaduló zsírok és trigliceridek a nyirokrendszeren és a véráramon keresztül a májba jutnak, ahol lebomlanak, majd a vizelettel távoznak a szervezetből.
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="lipolezer">
+              <summary>
+                <img class="t-thumb" src="images/lipolezer-rf-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Lipolézer + RF bőrfeszesítés</strong>
+                  <span>Fájdalommentes zsírbontás és feszesítés egyben.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/lipolezer-rf.webp"><img src="images/lipolezer-rf-520.webp" srcset="images/lipolezer-rf-520.webp 520w, images/lipolezer-rf.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Lipolézer párnák a combon kezelés közben" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    A lipolézeres zsírbontás és a rádiófrekvenciás (RF) bőrfeszesítés kombinációja egy
+                    fájdalommentes, nem invazív (sebészeti beavatkozás nélküli) alakformáló eljárás, amely a
+                    zsírsejtek ürítését és a bőr feszesítését célozza.
+                  </p>
+                  <h4>Hogyan működik a kezelés?</h4>
+                  <ul class="dots">
+                    <li><strong>Lipolézer:</strong> alacsony intenzitású lézerfényt használ, amely megnyitja a zsírsejtek falát, így a bennük lévő zsírsavak és trigliceridek kiürülnek a sejtek közötti térbe, majd a nyirokrendszeren keresztül távoznak.</li>
+                    <li><strong>Rádiófrekvencia (RF):</strong> hőenergiával stimulálja a mélyebb rétegek kollagén- és elasztintermelését, ami feszesíti a megnyúlt, petyhüdt bőrt, és segít a narancsbőr (cellulit) csökkentésében.</li>
+                    <li><strong>A kombináció előnye:</strong> a lipolézer kiüríti a zsírpárnákat, míg az RF megakadályozza, hogy a bőr a lefogyott centik után megereszkedjen.</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- ---------- Regeneráció ---------- -->
+        <section class="cat" id="regeneracio" aria-labelledby="cat-regen">
+          <header class="cat-head">
+            <span class="cat-num" aria-hidden="true">05</span>
+            <h3 id="cat-regen">Regeneráció</h3>
+            <p>A mikrokeringés és a mozgás támogatása.</p>
+          </header>
+          <div class="cat-list">
+            <details class="t-card" id="bemer">
+              <summary>
+                <img class="t-thumb" src="images/bemer-szett-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>BEMER fizikai érterápia</strong>
+                  <span>Vérkeringés-javítás felsőfokon – a mikrokeringés támogatása.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/bemer-szett.webp"><img src="images/bemer-szett-520.webp" srcset="images/bemer-szett-520.webp 520w, images/bemer-szett.webp 1100w" sizes="(min-width: 900px) 400px, 80vw" alt="BEMER Premium-Set Evo szett a kezelőágyon" loading="lazy"></button>
+                  <button type="button" data-full="images/bemer-vezerlo.webp"><img src="images/bemer-vezerlo-520.webp" alt="BEMER érintőképernyős vezérlőegység" loading="lazy"></button>
+                  <button type="button" data-full="images/bemer-bspot.webp"><img src="images/bemer-bspot-520.webp" alt="BEMER B.Spot applikátor" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p class="lead">Vérkeringés-javítás felsőfokon! A mikrokeringés támogatása természetes módon.</p>
+                  <p>
+                    A BEMER egy innovatív, pulzáló elektromágneses mezőt alkalmazó orvostechnológiai eszköz,
+                    amely célzottan támogatja a szervezet mikrokeringését, ezáltal hozzájárulhat a sejtek
+                    megfelelő oxigén- és tápanyagellátásához, valamint a szervezet természetes regenerációs
+                    folyamataihoz.
+                  </p>
+
+                  <h4>Milyen területeken nyújthat kiegészítő támogatást?</h4>
+                  <ul class="dots">
+                    <li>Ízületi, izom- és mozgásszervi fájdalmak esetén</li>
+                    <li>Neurológiai és belgyógyászati problémák kiegészítő támogatására</li>
+                    <li>Cukorbetegség esetén, a mikrokeringés támogatására</li>
+                    <li>Migrénes fejfájás esetén</li>
+                    <li>Sérülések és műtétek utáni regeneráció támogatására</li>
+                    <li>Sebgyógyulás elősegítésére</li>
+                    <li>Fáradtság, kimerültség és stressz esetén</li>
+                    <li>Alvásproblémák esetén</li>
+                    <li>Depresszió esetén</li>
+                    <li>Az immunrendszer és a vitalitás támogatására</li>
+                  </ul>
+
+                  <h4>Miben segíthet a BEMER?</h4>
+                  <dl class="benefits">
+                    <div><dt>A mikrokeringés támogatása</dt><dd>Elősegítheti a kis erek természetes működését, ezáltal hozzájárulhat a szövetek megfelelő oxigén- és tápanyagellátásához.</dd></div>
+                    <div><dt>A regeneráció támogatása</dt><dd>Segítheti a sejtek anyagcsere-folyamatait és a szervezet regenerációját.</dd></div>
+                    <div><dt>Mozgásszervi panaszok enyhítése</dt><dd>Kiegészítő terápiaként alkalmazható izommerevség, ízületi panaszok és mozgásszervi fájdalmak esetén.</dd></div>
+                    <div><dt>Sebgyógyulás támogatása</dt><dd>Hozzájárulhat a szervezet természetes regenerációs folyamataihoz.</dd></div>
+                    <div><dt>Sport és fizikai aktivitás</dt><dd>Támogathatja az edzést követő regenerációt és a fizikai terhelhetőséget.</dd></div>
+                    <div><dt>Fáradtság és stressz</dt><dd>A kezelések során sokan a testi ellazulást, a pihenést és az általános közérzet javulását tapasztalják.</dd></div>
+                  </dl>
+
+                  <div class="callout">
+                    <h4>Miért érdemes kipróbálni?</h4>
+                    <p>
+                      A BEMER kezelés kényelmes, fájdalommentes, pihentető eljárás, amely a szervezet saját
+                      működésének támogatására összpontosít. Gyógyszermentes, kiegészítő lehetőséget kínálhat
+                      azok számára, akik szeretnének tudatosabban odafigyelni egészségükre, regenerációjukra és
+                      vitalitásukra.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="kineziotape">
+              <summary>
+                <img class="t-thumb" src="images/kineziologiai-tape-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>Kineziológiai tape</strong>
+                  <span>Rugalmas tapasz az izmok és ízületek támogatására.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/kineziologiai-tape.webp"><img src="images/kineziologiai-tape-520.webp" srcset="images/kineziologiai-tape-520.webp 520w, images/kineziologiai-tape.webp 1100w" sizes="(min-width: 900px) 400px, 92vw" alt="Kineziológiai tapasz a térden" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p class="lead">Fájdalom, izomfeszülés vagy túlterhelt ízületek nehezítik a mindennapjaidat?</p>
+                  <p>
+                    A kineziológiai tapasz egy rugalmas, bőrre ragasztható szalag, amely a megfelelő
+                    technikával felhelyezve kiegészítő támogatást nyújthat az izmok és ízületek számára,
+                    miközben lehetővé teszi a természetes mozgást.
+                  </p>
+                  <h4>✨ Miben segíthet?</h4>
+                  <ul class="dots">
+                    <li>Enyhítheti bizonyos mozgásszervi panaszok fájdalomérzetét.</li>
+                    <li>Támogathatja az izmok és ízületek mozgás közbeni működését.</li>
+                    <li>Segíthet a duzzanat mérséklésében megfelelő nyiroktapaszolási technikával.</li>
+                    <li>Kiegészítő segítséget nyújthat sportolás és fizikai terhelés során.</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- ---------- Felmérések ---------- -->
+        <section class="cat" id="felmeresek" aria-labelledby="cat-felmeres">
+          <header class="cat-head">
+            <span class="cat-num" aria-hidden="true">06</span>
+            <h3 id="cat-felmeres">Felmérések</h3>
+            <p>Ismerd meg jobban a szervezeted jelzéseit.</p>
+          </header>
+          <div class="cat-list">
+            <details class="t-card" id="itovi">
+              <summary>
+                <img class="t-thumb" src="images/itovi-meres-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>iTOVi mérés</strong>
+                  <span>Melyik doTERRA illóolaj illik hozzád? Derítsük ki!</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/itovi-meres.webp"><img src="images/itovi-meres-520.webp" srcset="images/itovi-meres-520.webp 520w, images/itovi-meres.webp 1100w" sizes="(min-width: 900px) 400px, 80vw" alt="iTOVi készülék a kézben, eredmények a telefonon" loading="lazy"></button>
+                  <button type="button" data-full="images/itovi-ildiko.webp"><img src="images/itovi-ildiko-520.webp" alt="Ildikó iTOVi méréssel és doTERRA olajokkal" loading="lazy"></button>
+                  <button type="button" data-full="images/itovi-keszulek.webp"><img src="images/itovi-keszulek-520.webp" alt="iTOVi készülék közelről" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p class="lead">Fedezd fel, mely doTERRA illóolajok illenek hozzád! 🌿</p>
+                  <p>
+                    Több tucat illóolajad van otthon, de nem tudod, melyiket válaszd? Vásárlás előtt
+                    szeretnéd jobban megismerni az olajokat, és tudatosabban eligazodni közöttük?
+                  </p>
+                  <p>
+                    Az iTOVi egy különleges, biorezonanciás wellnesseszköz, amely a galvanikus bőrválasz
+                    (GSR) mérésével vizsgálja a bőr elektromos vezetőképességének változásait. A mérés
+                    alapján személyre szabottan megmutatja, hogy az adott pillanatban mely vizsgált doTERRA
+                    illóolajokra és wellness-termékekre reagált erősebben a szervezeted.
+                  </p>
+                  <h4>🌸 Mire jó az iTOVi-mérés?</h4>
+                  <ul class="dots">
+                    <li>Segít tudatosabban kiválasztani a számodra érdekes termékeket.</li>
+                    <li>Akkor is hasznos lehet, ha már sok olajad van, de bizonytalan vagy a felhasználásukban.</li>
+                    <li>Támogatja az illóolajokkal kapcsolatos ismereteid bővítését és a személyes wellnessrutinod kialakítását.</li>
+                    <li>Nem kell találomra választanod!</li>
+                  </ul>
+                  <p class="note">
+                    Az iTOVi-mérés wellnesscélú tájékoztatás, nem orvosi vizsgálat. Az eredmények nem
+                    helyettesítik az egészségügyi szakember tanácsát.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <details class="t-card" id="ews">
+              <summary>
+                <img class="t-thumb pos-top" src="images/ews-analyzer-eredmeny-520.webp" alt="" loading="lazy">
+                <span class="t-head">
+                  <strong>EWS Analyzer felmérés</strong>
+                  <span>Állapotfelmérés kevesebb, mint egy perc alatt.</span>
+                </span>
+              </summary>
+              <div class="t-body">
+                <div class="t-media" data-gallery>
+                  <button type="button" data-full="images/ews-analyzer-eredmeny.webp"><img class="pos-top" src="images/ews-analyzer-eredmeny-520.webp" srcset="images/ews-analyzer-eredmeny-520.webp 520w, images/ews-analyzer-eredmeny.webp 1100w" sizes="(min-width: 900px) 400px, 80vw" alt="EWS Analyzer energetikai kockázatelemzés a laptop képernyőjén" loading="lazy"></button>
+                  <button type="button" data-full="images/ews-analyzer-ildiko.webp"><img src="images/ews-analyzer-ildiko-520.webp" alt="Ildikó a kezelőben az EWS Analyzer készülékkel" loading="lazy"></button>
+                </div>
+                <div class="t-text">
+                  <p>
+                    Az EWS Analyzer készülékkel lehetőség nyílik arra, hogy – még a betegség kialakulása
+                    előtt – képet kapjunk a szervezetben történő változásokról. Az elektromágneses hullámok,
+                    melyek az emberi szervezetből távoznak, pontosan utalnak a test állapotára!
+                  </p>
+                  <h4>Az EWS Analyzer előnyei</h4>
+                  <ul class="dots">
+                    <li>Kevesebb, mint egy perc alatt szolgáltat információt a test állapotáról.</li>
+                    <li>Rendkívül könnyen és gyorsan láthatóvá válnak a szervezetben végbemenő folyamatok, még azt megelőzően, hogy biokémiai vagy strukturális szinten a problémák megjelennének.</li>
+                  </ul>
+
+                  <details class="sub">
+                    <summary>Kiknek ajánlott?</summary>
+                    <ul class="dots">
+                      <li>Hajszolt és stresszes életmódot folytató személyeknek, akik szeretnének gyors és komplex elemzést kapni egészségi állapotukról energetikai és fizikai szinten.</li>
+                      <li>Fáradtságban vagy alvászavarban szenvedőknek, akik szeretnék tudni, milyen egyensúlyvesztésből származik a problémájuk.</li>
+                      <li>Fellépő hormonzavarok esetében, főleg nőknél (hajhullás, hízás, ödémára való hajlam, pajzsmirigy-, illetve hasnyálmirigy-működési panaszok).</li>
+                      <li>Mozgásszervi panaszok során (kopás, ízületi gyulladás), ha szeretnéd ismét lendületbe hozni magad.</li>
+                      <li>Állandó puffadás, az emésztőrendszeri zavarok hátterében meghúzódó okok feltérképezésére.</li>
+                      <li>A szív- és érrendszeri betegségek mögött húzódó tényezők feltárására.</li>
+                      <li>Makacs testzsírok esetében, ha szeretnéd tudni, milyen tényezők hátráltatnak a leolvasztásukban.</li>
+                    </ul>
+                  </details>
+
+                  <details class="sub">
+                    <summary>Milyen területekről kaphatunk információt?</summary>
+                    <ul class="pills small">
+                      <li>Szív és vérkeringési rendszer</li>
+                      <li>Emésztőrendszeri funkciók</li>
+                      <li>Máj és epe funkciók</li>
+                      <li>Szív és agyi keringési rendszer</li>
+                      <li>Hasnyálmirigy funkciók</li>
+                      <li>Vese funkciók</li>
+                      <li>Tüdő funkciók</li>
+                      <li>Agy és idegek</li>
+                      <li>Csont</li>
+                      <li>Meridiánok</li>
+                      <li>Reumás csontbetegség</li>
+                      <li>Vércukor</li>
+                      <li>Fizikai állapot</li>
+                      <li>Mérgek, toxinok</li>
+                      <li>Nyomelemek, vitaminok</li>
+                      <li>Prosztata</li>
+                      <li>Mell analízis</li>
+                      <li>Férfi szexuális funkciók</li>
+                      <li>Nőgyógyászat</li>
+                      <li>Bőr</li>
+                      <li>Hormonrendszer</li>
+                      <li>Immunrendszer</li>
+                      <li>Nehézfémek</li>
+                      <li>Szem funkciók</li>
+                      <li>Elhízás</li>
+                      <li>Aminosavak</li>
+                      <li>Fül</li>
+                      <li>Allergének</li>
+                      <li>Pajzsmirigy</li>
+                      <li>Koenzimek</li>
+                      <li>Kötőszövet, kollagén</li>
+                      <li>Paraziták</li>
+                      <li>Lelki állapot</li>
+                    </ul>
+                  </details>
+
+                  <details class="sub">
+                    <summary>A tesztelés legfontosabb szabályai</summary>
+                    <ol class="steps">
+                      <li>Ne igyon tesztelés előtt kb. 2 órával alkoholt, kávét és egyéb serkentő hatású italokat!</li>
+                      <li>Ha megterhelő tevékenységet végzett, a tesztelés előtt pihenjen 1–2 órát!</li>
+                      <li>A tesztelést nem teli, de nem is üres gyomorral kell végezni – optimálisan étkezés után 2 órával!</li>
+                    </ol>
+                  </details>
+
+                  <p class="note">
+                    <strong>Fontos:</strong> a készülék a gyártó nyilatkozata alapján nem minősül
+                    orvostechnikai eszköznek. A teszt eredményei csak referenciaként szolgálnak, nem orvosi
+                    diagnosztikus értékűek, így orvosi diagnózist nem helyettesítenek.
+                  </p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============ A SZIGETRŐL ============ -->
+      <section class="about" id="rolam" aria-labelledby="about-title">
+        <figure class="about-photo">
+          <img src="images/ews-analyzer-ildiko-520.webp" srcset="images/ews-analyzer-ildiko-520.webp 520w, images/ews-analyzer-ildiko.webp 1100w" sizes="(min-width: 900px) 420px, 92vw" alt="Ildikó a kezelőben" loading="lazy">
+        </figure>
+        <div class="about-copy">
+          <p class="eyebrow">Életfa szemlélet</p>
+          <h2 id="about-title">Gyökerek, figyelem, friss energia</h2>
           <p>
             A kezelések célja, hogy legyen egy hely, ahol megérkezhetsz, kiengedheted a feszültséget,
             és újra kapcsolódhatsz a saját ritmusodhoz. Masszázsok, illóolajok, modern alakformáló
             és regeneráló eszközök – mindig személyre szabva.
           </p>
-          <ul class="stat-row" aria-label="Röviden rólunk">
+          <ul class="about-facts">
             <li><strong>18</strong><span>kezelés és felmérés</span></li>
             <li><strong>8</strong><span>doTERRA illóolaj az AromaTouch®-ban</span></li>
             <li><strong>1</strong><span>nyugodt sziget Szeged belvárosában</span></li>
@@ -170,700 +809,48 @@
         </div>
       </section>
 
-      <!-- ============ ÁTTEKINTŐ ============ -->
-      <section class="service-overview" id="szolgaltatasok" aria-labelledby="services-title">
-        <div class="section-head">
-          <p class="eyebrow">Választható kezelések</p>
-          <h2 id="services-title">Egy sziget, több út a feltöltődéshez</h2>
-          <p>Válassz kategóriát, és kattints a kezelésre a részletekért.</p>
-        </div>
-
-        <div class="filter-bar" role="toolbar" aria-label="Kezelések szűrése">
-          <button type="button" class="is-active" data-filter="all" aria-pressed="true">Mind</button>
-          <button type="button" data-filter="masszazs" aria-pressed="false">Masszázs &amp; relax</button>
-          <button type="button" data-filter="aroma" aria-pressed="false">Aromaterápia</button>
-          <button type="button" data-filter="arc" aria-pressed="false">Arc &amp; fej</button>
-          <button type="button" data-filter="alak" aria-pressed="false">Alakformálás</button>
-          <button type="button" data-filter="regen" aria-pressed="false">Regeneráció</button>
-          <button type="button" data-filter="felmeres" aria-pressed="false">Felmérések</button>
-        </div>
-
-        <div class="service-grid">
-          <a class="service-tile" data-cat="masszazs" href="#gyuro-masszazs">
-            <img src="masszazs_enhanced.jpg" alt="" loading="lazy">
-            <span class="tag">Masszázs</span>
-            <h3>Gyúró, izomlazító masszázs</h3>
-          </a>
-          <a class="service-tile" data-cat="masszazs" href="#relaxalo-masszazs">
-            <img src="images/relaxalo-masszazs.jpg" alt="" loading="lazy">
-            <span class="tag">Masszázs</span>
-            <h3>Frissítő, relaxáló masszázs</h3>
-          </a>
-          <a class="service-tile" data-cat="masszazs" href="#nyirokmasszazs">
-            <img src="images/nyirokmasszazs.jpg" alt="" loading="lazy">
-            <span class="tag">Masszázs</span>
-            <h3>Nyirokmasszázs</h3>
-          </a>
-          <a class="service-tile no-photo" data-cat="masszazs" href="#talpmasszazs">
-            <span class="tile-icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32"><path d="M12 29c-3 0-5-2-5-5 0-4 2-6 2-10 0-5 2-9 6-9 3 0 4 3 4 6 0 4-2 6-2 10 0 5-2 8-5 8Z" /><circle cx="21" cy="5" r="1.6" /><circle cx="24.5" cy="8" r="1.4" /><circle cx="26" cy="12" r="1.2" /></svg>
-            </span>
-            <span class="tag">Masszázs</span>
-            <h3>Talpmasszázs</h3>
-          </a>
-          <a class="service-tile" data-cat="masszazs" href="#kopolyozes">
-            <img src="images/kopolyozes.jpg" alt="" loading="lazy">
-            <span class="tag">Masszázs</span>
-            <h3>Köpölyözés</h3>
-          </a>
-          <a class="service-tile" data-cat="masszazs" href="#access-bars">
-            <img src="images/access-bars.jpg" alt="" loading="lazy">
-            <span class="tag">Relax</span>
-            <h3>Access Bars®</h3>
-          </a>
-          <a class="service-tile" data-cat="aroma" href="#aromatouch">
-            <img src="images/aromatouch-olajok.jpg" alt="" loading="lazy">
-            <span class="tag">Aromaterápia</span>
-            <h3>doTERRA AromaTouch®</h3>
-          </a>
-          <a class="service-tile" data-cat="aroma masszazs" href="#aromaterapias-masszazs">
-            <img src="images/aromaterapias-masszazs.jpg" alt="" loading="lazy">
-            <span class="tag">Aromaterápia</span>
-            <h3>doTERRA aromaterápiás masszázs</h3>
-          </a>
-          <a class="service-tile" data-cat="arc" href="#spa-arckezeles">
-            <img src="images/spa-arckezeles.jpg" alt="" loading="lazy">
-            <span class="tag">Arc</span>
-            <h3>SPA Prémium arckezelés</h3>
-          </a>
-          <a class="service-tile no-photo" data-cat="arc masszazs" href="#fejmasszazs">
-            <span class="tile-icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32"><path d="M16 4c6 0 10 4 10 10 0 4-2 6-2 9v3h-8" /><path d="M16 4C10 4 6 8 6 14c0 2 1 3 1 5l-2 3h3v4h8" /><path d="M13 13c1-2 5-2 6 0" /></svg>
-            </span>
-            <span class="tag">Fej</span>
-            <h3>Energetizáló fejmasszázs gua shával</h3>
-          </a>
-          <a class="service-tile" data-cat="alak" href="#cellulitmasszazs">
-            <img src="images/cellulitmasszazs.jpg" alt="" loading="lazy">
-            <span class="tag">Alakformálás</span>
-            <h3>Cellulitmasszázs</h3>
-          </a>
-          <a class="service-tile" data-cat="alak" href="#maderoterapia">
-            <img src="images/maderoterapia.jpg" alt="" loading="lazy">
-            <span class="tag">Alakformálás</span>
-            <h3>Maderoterápia</h3>
-          </a>
-          <a class="service-tile" data-cat="alak" href="#kavitacio">
-            <img src="images/kavitacio-kezeles.jpg" alt="" loading="lazy">
-            <span class="tag">Alakformálás</span>
-            <h3>Kavitációs zsírbontás</h3>
-          </a>
-          <a class="service-tile" data-cat="alak" href="#lipolezer">
-            <img src="images/lipolezer-rf.jpg" alt="" loading="lazy">
-            <span class="tag">Alakformálás</span>
-            <h3>Lipolézer + RF bőrfeszesítés</h3>
-          </a>
-          <a class="service-tile" data-cat="regen" href="#bemer">
-            <img src="images/bemer-szett.jpg" alt="" loading="lazy">
-            <span class="tag">Regeneráció</span>
-            <h3>BEMER fizikai érterápia</h3>
-          </a>
-          <a class="service-tile" data-cat="regen" href="#kineziotape">
-            <img src="images/kineziologiai-tape.jpg" alt="" loading="lazy">
-            <span class="tag">Regeneráció</span>
-            <h3>Kineziológiai tape</h3>
-          </a>
-          <a class="service-tile" data-cat="felmeres aroma" href="#itovi">
-            <img src="images/itovi-meres.jpg" alt="" loading="lazy">
-            <span class="tag">Felmérés</span>
-            <h3>iTOVi mérés</h3>
-          </a>
-          <a class="service-tile" data-cat="felmeres" href="#ews">
-            <img src="images/ews-analyzer-eredmeny.jpg" alt="" loading="lazy">
-            <span class="tag">Felmérés</span>
-            <h3>EWS Analyzer felmérés</h3>
-          </a>
-        </div>
-      </section>
-
-      <!-- ============ MASSZÁZSOK ============ -->
-      <section class="content-band" id="masszazsok">
-        <div class="section-head">
-          <p class="eyebrow">Masszázsok</p>
-          <h2>Érintések a frissebb, könnyedebb közérzetért</h2>
-        </div>
-
-        <div class="treatment-grid">
-          <article class="treatment-card" id="gyuro-masszazs">
-            <img src="masszazs_enhanced.jpg" alt="Gyúró, izomlazító masszázs nyugodt wellness környezetben" loading="lazy">
-            <div>
-              <h3>Gyúró, izomlazító masszázs</h3>
-              <p>
-                A mindennapi stressz, az ülőmunka, a fizikai terhelés és a helytelen testtartás
-                gyakran vezet izomfeszüléshez, fájdalomhoz és mozgásbeszűküléshez. A kezelés célja a
-                letapadt, feszes izmok fellazítása, a vérkeringés fokozása és az izmok
-                regenerációjának támogatása.
-              </p>
-              <p>
-                Segíthet csökkenteni a nyak-, váll- és derékfájdalmakat, és javíthatja a mozgás
-                szabadságát. Ideális ülőmunkát vagy fizikai munkát végzőknek és sportolóknak.
-              </p>
-            </div>
-          </article>
-
-          <article class="treatment-card" id="relaxalo-masszazs">
-            <img src="images/relaxalo-masszazs.jpg" alt="Relaxáló hátmasszázs orchideákkal és gyertyákkal" loading="lazy">
-            <div>
-              <h3>Frissítő, relaxáló masszázs 🌿</h3>
-              <p>
-                Stressz, fáradtság, feszes nyak- és hátizmok? A frissítő, relaxáló masszázs segít
-                ellazítani a túlterhelt izmokat, enyhíteni a mindennapi feszültséget, és támogatja a
-                testi-lelki feltöltődést.
-              </p>
-              <p>
-                A kellemes masszázsfogások elősegítik a relaxációt, javíthatják a közérzetet, és
-                segítenek kiszakadni a rohanó hétköznapokból.
-              </p>
-            </div>
-          </article>
-
-          <article class="treatment-card" id="nyirokmasszazs">
-            <img src="images/nyirokmasszazs.jpg" alt="Nyirokmasszázs a lábon" loading="lazy">
-            <div>
-              <h3>Nyirokmasszázs</h3>
-              <p>
-                A nyirokmasszázs gyengéd, ritmikus mozdulatokkal támogatja a nyirokfolyadék áramlását,
-                és segíti a szövetek közötti folyadék elvezetését.
-              </p>
-              <p>
-                Megfelelő alkalmazás esetén hozzájárulhat a duzzanat mérsékléséhez, különösen
-                nyiroködéma kezelésében.
-              </p>
-            </div>
-          </article>
-
-          <article class="treatment-card" id="kopolyozes">
-            <img src="images/kopolyozes.jpg" alt="Köpölyözés vákuumos köpölyökkel a háton" loading="lazy">
-            <div>
-              <h3>Köpölyözés</h3>
-              <p>
-                A köpölyözés egy ősi technikán alapuló kezelés, amely során a köpölyök vákuumhatással
-                megemelik a bőrt és az alatta lévő szöveteket.
-              </p>
-              <ul class="detail-list">
-                <li>Fokozza a helyi véráramlást.</li>
-                <li>Segíthet az izmok ellazításában.</li>
-                <li>Így csökkentheti a fájdalmat.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="treatment-card" id="talpmasszazs">
-            <div class="card-art" aria-hidden="true">
-              <svg viewBox="0 0 32 32"><path d="M12 29c-3 0-5-2-5-5 0-4 2-6 2-10 0-5 2-9 6-9 3 0 4 3 4 6 0 4-2 6-2 10 0 5-2 8-5 8Z" /><circle cx="21" cy="5" r="1.6" /><circle cx="24.5" cy="8" r="1.4" /><circle cx="26" cy="12" r="1.2" /></svg>
-            </div>
-            <div>
-              <h3>Talpmasszázs</h3>
-              <p>
-                A talpon lévő zónák masszírozása reflexhatást válthat ki, miközben segít lelassulni és
-                kiengedni a nap végére felgyűlt feszültséget. A lábon több tízezer idegvégződés
-                található, ezért a talpmasszázs az egész testre kellemesen ható élmény lehet.
-              </p>
-              <ul class="detail-list">
-                <li>Támogathatja a vérkeringés élénkebb működését.</li>
-                <li>Segíthet a feszültségoldásban.</li>
-                <li>Jó választás első masszázsélménynek is.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ============ ACCESS BARS ============ -->
-      <section class="feature split" id="access-bars">
-        <figure class="feature-media">
-          <img src="images/access-bars.jpg" alt="Gyengéd érintés a fej pontjain relaxáció közben" loading="lazy">
-        </figure>
-        <div class="feature-copy">
-          <p class="eyebrow">Access Bars®</p>
-          <h2>Egész nap fáradt vagy, miközben az agyad túlpörög?</h2>
-          <p>
-            Az Access Bars® egy gyengéd érintéseken alapuló relaxációs módszer, amely során a fej
-            meghatározott pontjait finoman érintjük. A módszer célja a mély ellazulás elősegítése,
-            a stresszes hétköznapokból való kiszakadás és a nyugodt, befelé figyelő állapot
-            megteremtése.
-          </p>
-          <div class="question-list">
-            <p>Sokat stresszelsz, aggódsz?</p>
-            <p>Nehezen kapcsolsz ki a nap végén?</p>
-            <p>Vágysz egy kis csendre a fejedben?</p>
-          </div>
-          <ul class="pill-list">
-            <li>Mély relaxáció</li>
-            <li>Stresszoldó élmény</li>
-            <li>Tisztább, rendezettebb gondolatok</li>
-            <li>Befelé figyelő, nyugodt állapot</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- ============ AROMATERÁPIA ============ -->
-      <section class="feature split reverse" id="aroma">
-        <figure class="feature-media">
-          <img src="images/aromatouch-olajok.jpg" alt="A nyolc AromaTouch® doTERRA illóolaj: Balance, Lavender, Melaleuca, On Guard, AromaTouch, Deep Blue, Wild Orange, Peppermint" loading="lazy">
-        </figure>
-        <div class="feature-copy" id="aromatouch">
-          <p class="eyebrow">doTERRA AromaTouch®</p>
-          <h2>Amikor az érintés és az illatok találkoznak 🌿</h2>
-          <p class="lead">
-            Engedd el a külvilág zaját, és merülj el a nyugalom különleges világában!
-          </p>
-          <p>
-            A nyolc gondosan kiválasztott doTERRA illóolaj és a gyengéd, harmonikus érintések
-            egyedülálló élménnyé varázsolják ezt a kezelést. Segít ellazulni, lelassulni, és olyan
-            különleges, békés lelkiállapotba kerülni, ahol végre önmagadra figyelhetsz.
-          </p>
-          <p>
-            Nem csupán egy masszázs, hanem egy illatos utazás a testi-lelki harmónia felé. Add át
-            magad az élménynek, és tapasztald meg a valódi kikapcsolódást!
-          </p>
-          <div class="oil-row" aria-label="AromaTouch® olajok">
-            <span>Balance</span>
-            <span>Lavender</span>
-            <span>Melaleuca (Tea Tree)</span>
-            <span>On Guard</span>
-            <span>AromaTouch</span>
-            <span>Deep Blue</span>
-            <span>Wild Orange</span>
-            <span>Peppermint</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="wide-card" id="aromaterapias-masszazs">
-        <img src="images/aromaterapias-masszazs.jpg" alt="Aromaterápiás masszázs doTERRA illóolajokkal" loading="lazy">
-        <div>
-          <p class="eyebrow">doTERRA aromaterápiás masszázs</p>
-          <h2>Illatok, amelyek élménnyé varázsolják a pihenést 🌿</h2>
-          <p class="lead">Lépj ki a hétköznapok rohanásából, és merülj el az illatok különleges világában!</p>
-          <p>
-            A kellemes masszázsfogások és a gondosan kiválasztott doTERRA illóolajok harmonikus
-            találkozása segít megteremteni a nyugalom és az ellazulás pillanatait. Az illatok
-            hatással lehetnek a hangulatodra, támogathatják a relaxációt, és különleges érzékszervi
-            élménnyé tehetik a masszázst.
-          </p>
-          <p>
-            Több mint kikapcsolódás: egy illatos utazás, ahol a tested ellazul, a lelked pedig
-            megpihen. Engedd, hogy az érintés és az illatok harmóniája feltöltsön!
-          </p>
-        </div>
-      </section>
-
-      <!-- ============ ARC & FEJ ============ -->
-      <section class="content-band" id="arc-fej">
-        <div class="section-head">
-          <p class="eyebrow">Arc &amp; fej</p>
-          <h2>Énidő, ragyogás és könnyű fej</h2>
-        </div>
-
-        <div class="treatment-grid two">
-          <article class="treatment-card" id="spa-arckezeles">
-            <img src="images/spa-arckezeles.jpg" alt="Arcmasszázs SPA kezelés közben" loading="lazy">
-            <div>
-              <h3>SPA Prémium arckezelés</h3>
-              <p>
-                Szeretnél üdébb, ragyogóbb arcbőrt és egy igazán különleges énidőt? A kezelés során az
-                arctisztítást, a gondosan kiválasztott doTERRA illóolajokat, a rádiófrekvenciás (RF)
-                kezelést és a gua sha arcmasszázst ötvözzük egy komplex, kényeztető élményben.
-              </p>
-              <h4>🌿 Miben segíthet?</h4>
-              <ul class="detail-list">
-                <li><strong>RF-kezelés:</strong> hozzájárulhat a bőr feszesebb megjelenéséhez.</li>
-                <li><strong>Gua sha:</strong> gyengéd masszázstechnikával segítheti az arc ellazulását, és frissebb, üdébb megjelenést kölcsönözhet.</li>
-                <li><strong>doTERRA illóolajok:</strong> különleges aromaterápiás élménnyé varázsolják a kezelést.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="treatment-card" id="fejmasszazs">
-            <div class="card-art" aria-hidden="true">
-              <svg viewBox="0 0 120 120">
-                <path d="M60 18c22 0 36 15 36 36 0 14-7 22-7 32v12H60" />
-                <path d="M60 18c-22 0-36 15-36 36 0 7 3 11 3 17l-7 11h10v16h30" />
-                <path d="M48 50c4-7 20-7 24 0" />
-                <path d="M80 30c6 4 9 10 10 16" />
-              </svg>
-            </div>
-            <div>
-              <h3>Energetizáló fejmasszázs gua shával 🌿</h3>
-              <p>
-                Zsong a fejed, feszült vagy, és úgy érzed, szükséged van egy kis kikapcsolódásra? A
-                gyengéd fejmasszázs és a gua sha eszközzel végzett, finom simító mozdulatok
-                segíthetnek ellazítani a fejbőr és a nyak környékét, enyhíteni a mindennapi
-                feszültségérzetet, és kellemes, frissítő élményt nyújthatnak.
-              </p>
-              <h4>🌸 Miben segíthet?</h4>
-              <ul class="detail-list">
-                <li>Elősegíti a relaxációt és a testi-lelki ellazulást.</li>
-                <li>Segít enyhíteni a fej, a nyak és a váll környékén érzett feszültséget.</li>
-                <li>Serkenti a kezelt terület helyi vérkeringését.</li>
-                <li>Segít kiszakadni a mindennapi rohanásból, és újra önmagadra figyelni.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ============ ALAKFORMÁLÁS ============ -->
-      <section class="body-section" id="alakformalas">
-        <div class="section-head">
-          <p class="eyebrow">Alakformálás</p>
-          <h2>Vágás és műtét nélkül a feszesebb, simább bőrért</h2>
-          <p>Kézi technikák és modern eszközös kezelések a comb, a fenék, a csípő és a has területére.</p>
-        </div>
-
-        <div class="treatment-grid two">
-          <article class="treatment-card" id="cellulitmasszazs">
-            <img src="images/cellulitmasszazs.jpg" alt="Narancsbőr a combon" loading="lazy">
-            <div>
-              <h3>Cellulitmasszázs</h3>
-              <p>
-                Célzott, intenzív masszázsfogásokkal segíti a helyi vér- és nyirokkeringést, valamint
-                a szövetek mobilizálását. A kezelést speciális, zsírégetőként forgalmazott krémekkel
-                és köpölyözéssel egészítjük ki, hogy fokozzuk az intenzitását és támogassuk a bőr
-                megjelenésének javítását.
-              </p>
-              <p>
-                A comb, a fenék és a csípő területére összpontosító kezelés segíthet mérsékelni a
-                narancsbőrt, és hozzájárulhat a simább bőrfelszínhez.
-              </p>
-            </div>
-          </article>
-
-          <article class="treatment-card" id="maderoterapia">
-            <img src="images/maderoterapia.jpg" alt="Maderoterápia fa henger eszközzel a combon" loading="lazy" class="pos-low">
-            <div>
-              <h3>Maderoterápia</h3>
-              <p>
-                Speciális, anatómiai kialakítású faeszközökkel végzett masszázstechnika. A célzott,
-                ritmikus mozdulatok serkentik a kezelt terület helyi vérkeringését, segítik a szövetek
-                mobilizálását, és hozzájárulnak a bőr simább, feszesebb megjelenéséhez.
-              </p>
-              <p>A kezelés során elsősorban a comb, a fenék és a csípő területére összpontosítunk.</p>
-            </div>
-          </article>
-        </div>
-
-        <article class="device-card" id="kavitacio">
-          <div class="device-media">
-            <img src="images/kavitacio-kezeles.jpg" alt="Kavitációs ultrahangos fej a hason kezelés közben" loading="lazy">
-            <img src="images/kavitacio-keszulek.jpg" alt="Kavitációs és lipolézeres kezelőkészülék" loading="lazy" class="contain">
-          </div>
-          <div class="device-copy">
-            <p class="eyebrow">Ultrahangos zsírbontás</p>
-            <h3>Kavitációs zsírbontás</h3>
-            <p>
-              Vágás és műtét nélküli esztétikai és alakformáló eljárás, amely a lokális zsírpárnák és
-              a narancsbőr csökkentésére szolgál.
-            </p>
-            <h4>Hogyan működik?</h4>
-            <ol class="steps">
-              <li>
-                <strong>Ultrahangos hullámok</strong>
-                <span>A berendezés alacsony frekvenciájú (általában 36–40 kHz körüli) ultrahangot bocsát ki, amely mikrobuborékokat hoz létre a zsírsejtek közötti térben.</span>
-              </li>
-              <li>
-                <strong>Sejtfal roncsolása</strong>
-                <span>A buborékok összeroppanásakor keletkező nyomásváltozás (kavitáció) megroppantja a zsírsejtek membránját.</span>
-              </li>
-              <li>
-                <strong>Kiürülés</strong>
-                <span>A felszabaduló zsírok és trigliceridek a nyirokrendszeren és a véráramon keresztül a májba jutnak, ahol lebomlanak, majd a vizelettel távoznak a szervezetből.</span>
-              </li>
-            </ol>
-          </div>
-        </article>
-
-        <article class="device-card reverse" id="lipolezer">
-          <div class="device-media single">
-            <img src="images/lipolezer-rf.jpg" alt="Lipolézer párnák a combon kezelés közben" loading="lazy">
-          </div>
-          <div class="device-copy">
-            <p class="eyebrow">Lipolézer + rádiófrekvencia</p>
-            <h3>Lipolézeres zsírbontás és RF bőrfeszesítés</h3>
-            <p>
-              A lipolézeres zsírbontás és a rádiófrekvenciás (RF) bőrfeszesítés kombinációja egy
-              fájdalommentes, nem invazív (sebészeti beavatkozás nélküli) alakformáló eljárás, amely a
-              zsírsejtek ürítését és a bőr feszesítését célozza.
-            </p>
-            <h4>Hogyan működik a kezelés?</h4>
-            <ul class="detail-list">
-              <li><strong>Lipolézer:</strong> alacsony intenzitású lézerfényt használ, amely megnyitja a zsírsejtek falát, így a bennük lévő zsírsavak és trigliceridek kiürülnek a sejtek közötti térbe, majd a nyirokrendszeren keresztül távoznak.</li>
-              <li><strong>Rádiófrekvencia (RF):</strong> hőenergiával stimulálja a mélyebb rétegek kollagén- és elasztintermelését, ami feszesíti a megnyúlt, petyhüdt bőrt, és segít a narancsbőr (cellulit) csökkentésében.</li>
-              <li><strong>A kombináció előnye:</strong> a lipolézer kiüríti a zsírpárnákat, míg az RF megakadályozza, hogy a bőr a lefogyott centik után megereszkedjen.</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <!-- ============ BEMER ============ -->
-      <section class="feature-block" id="bemer">
-        <div class="feature-block-head">
-          <div>
-            <p class="eyebrow">BEMER fizikai érterápia</p>
-            <h2>Vérkeringés-javítás felsőfokon!</h2>
-            <p class="lead">A mikrokeringés támogatása természetes módon.</p>
-            <p>
-              A BEMER egy innovatív, pulzáló elektromágneses mezőt alkalmazó orvostechnológiai eszköz,
-              amely célzottan támogatja a szervezet mikrokeringését, ezáltal hozzájárulhat a sejtek
-              megfelelő oxigén- és tápanyagellátásához, valamint a szervezet természetes regenerációs
-              folyamataihoz.
-            </p>
-          </div>
-          <div class="gallery" data-gallery>
-            <button type="button" class="gallery-main" aria-label="BEMER szett nagyítása">
-              <img src="images/bemer-szett.jpg" alt="BEMER Premium-Set Evo szett a kezelőágyon" loading="lazy">
-            </button>
-            <button type="button" aria-label="BEMER vezérlő nagyítása">
-              <img src="images/bemer-vezerlo.jpg" alt="BEMER érintőképernyős vezérlőegység" loading="lazy">
-            </button>
-            <button type="button" aria-label="BEMER B.Spot applikátor nagyítása">
-              <img src="images/bemer-bspot.jpg" alt="BEMER B.Spot applikátor" loading="lazy">
-            </button>
-          </div>
-        </div>
-
-        <div class="info-columns">
-          <div class="info-panel">
-            <h3>Milyen területeken nyújthat kiegészítő támogatást?</h3>
-            <ul class="detail-list compact">
-              <li>Ízületi, izom- és mozgásszervi fájdalmak esetén</li>
-              <li>Neurológiai és belgyógyászati problémák kiegészítő támogatására</li>
-              <li>Cukorbetegség esetén, a mikrokeringés támogatására</li>
-              <li>Migrénes fejfájás esetén</li>
-              <li>Sérülések és műtétek utáni regeneráció támogatására</li>
-              <li>Sebgyógyulás elősegítésére</li>
-              <li>Fáradtság, kimerültség és stressz esetén</li>
-              <li>Alvásproblémák esetén</li>
-              <li>Depresszió esetén</li>
-              <li>Az immunrendszer és a vitalitás támogatására</li>
-            </ul>
-          </div>
-          <div class="info-panel">
-            <h3>Miben segíthet a BEMER?</h3>
-            <dl class="benefit-list">
-              <div><dt>A mikrokeringés támogatása</dt><dd>Elősegítheti a kis erek természetes működését, ezáltal hozzájárulhat a szövetek megfelelő oxigén- és tápanyagellátásához.</dd></div>
-              <div><dt>A regeneráció támogatása</dt><dd>Segítheti a sejtek anyagcsere-folyamatait és a szervezet regenerációját.</dd></div>
-              <div><dt>Mozgásszervi panaszok enyhítése</dt><dd>Kiegészítő terápiaként alkalmazható izommerevség, ízületi panaszok és mozgásszervi fájdalmak esetén.</dd></div>
-              <div><dt>Sebgyógyulás támogatása</dt><dd>Hozzájárulhat a szervezet természetes regenerációs folyamataihoz.</dd></div>
-              <div><dt>Sport és fizikai aktivitás</dt><dd>Támogathatja az edzést követő regenerációt és a fizikai terhelhetőséget.</dd></div>
-              <div><dt>Fáradtság és stressz</dt><dd>A kezelések során sokan a testi ellazulást, a pihenést és az általános közérzet javulását tapasztalják.</dd></div>
-            </dl>
-          </div>
-        </div>
-
-        <div class="callout">
-          <h3>Miért érdemes kipróbálni?</h3>
-          <p>
-            A BEMER kezelés kényelmes, fájdalommentes, pihentető eljárás, amely a szervezet saját
-            működésének támogatására összpontosít. Gyógyszermentes, kiegészítő lehetőséget kínálhat
-            azok számára, akik szeretnének tudatosabban odafigyelni egészségükre, regenerációjukra és
-            vitalitásukra.
-          </p>
-        </div>
-      </section>
-
-      <!-- ============ KINEZIO TAPE ============ -->
-      <section class="wide-card reverse" id="kineziotape">
-        <img src="images/kineziologiai-tape.jpg" alt="Kineziológiai tapasz a térden" loading="lazy">
-        <div>
-          <p class="eyebrow">Kineziológiai tape</p>
-          <h2>Támogatás mozgás közben</h2>
-          <p class="lead">Fájdalom, izomfeszülés vagy túlterhelt ízületek nehezítik a mindennapjaidat?</p>
-          <p>
-            A kineziológiai tapasz egy rugalmas, bőrre ragasztható szalag, amely a megfelelő
-            technikával felhelyezve kiegészítő támogatást nyújthat az izmok és ízületek számára,
-            miközben lehetővé teszi a természetes mozgást.
-          </p>
-          <h4>✨ Miben segíthet?</h4>
-          <ul class="detail-list">
-            <li>Enyhítheti bizonyos mozgásszervi panaszok fájdalomérzetét.</li>
-            <li>Támogathatja az izmok és ízületek mozgás közbeni működését.</li>
-            <li>Segíthet a duzzanat mérséklésében megfelelő nyiroktapaszolási technikával.</li>
-            <li>Kiegészítő segítséget nyújthat sportolás és fizikai terhelés során.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- ============ FELMÉRÉSEK ============ -->
-      <section class="content-band" id="felmeresek">
-        <div class="section-head">
-          <p class="eyebrow">Felmérések</p>
-          <h2>Ismerd meg jobban a szervezeted jelzéseit</h2>
-        </div>
-
-        <article class="device-card" id="itovi">
-          <div class="gallery stacked" data-gallery>
-            <button type="button" class="gallery-main" aria-label="iTOVi mérés nagyítása">
-              <img src="images/itovi-meres.jpg" alt="iTOVi készülék a kézben, eredmények a telefonon" loading="lazy">
-            </button>
-            <button type="button" aria-label="Ildikó iTOVi mérés közben – nagyítás">
-              <img src="images/itovi-ildiko.jpg" alt="Ildikó iTOVi méréssel és doTERRA olajokkal" loading="lazy">
-            </button>
-            <button type="button" aria-label="iTOVi készülék közelről – nagyítás">
-              <img src="images/itovi-keszulek.jpg" alt="iTOVi készülék közelről" loading="lazy">
-            </button>
-          </div>
-          <div class="device-copy">
-            <p class="eyebrow">iTOVi mérés</p>
-            <h3>Fedezd fel, mely doTERRA illóolajok illenek hozzád! 🌿</h3>
-            <p>
-              Több tucat illóolajad van otthon, de nem tudod, melyiket válaszd? Vásárlás előtt
-              szeretnéd jobban megismerni az olajokat, és tudatosabban eligazodni közöttük?
-            </p>
-            <p>
-              Az iTOVi egy különleges, biorezonanciás wellnesseszköz, amely a galvanikus bőrválasz
-              (GSR) mérésével vizsgálja a bőr elektromos vezetőképességének változásait. A mérés
-              alapján személyre szabottan megmutatja, hogy az adott pillanatban mely vizsgált doTERRA
-              illóolajokra és wellness-termékekre reagált erősebben a szervezeted.
-            </p>
-            <h4>🌸 Mire jó az iTOVi-mérés?</h4>
-            <ul class="detail-list">
-              <li>Segít tudatosabban kiválasztani a számodra érdekes termékeket.</li>
-              <li>Akkor is hasznos lehet, ha már sok olajad van, de bizonytalan vagy a felhasználásukban.</li>
-              <li>Támogatja az illóolajokkal kapcsolatos ismereteid bővítését és a személyes wellnessrutinod kialakítását.</li>
-              <li>Nem kell találomra választanod!</li>
-            </ul>
-            <p class="fineprint">
-              Az iTOVi-mérés wellnesscélú tájékoztatás, nem orvosi vizsgálat. Az eredmények nem
-              helyettesítik az egészségügyi szakember tanácsát.
-            </p>
-          </div>
-        </article>
-
-        <article class="device-card reverse" id="ews">
-          <div class="gallery stacked two" data-gallery>
-            <button type="button" class="gallery-main" aria-label="EWS Analyzer eredmény nagyítása">
-              <img src="images/ews-analyzer-eredmeny.jpg" alt="EWS Analyzer energetikai kockázatelemzés a laptop képernyőjén" loading="lazy" class="pos-top">
-            </button>
-            <button type="button" aria-label="Ildikó az EWS Analyzerrel – nagyítás">
-              <img src="images/ews-analyzer-ildiko.jpg" alt="Ildikó a kezelőben az EWS Analyzer készülékkel" loading="lazy">
-            </button>
-          </div>
-          <div class="device-copy">
-            <p class="eyebrow">EWS Analyzer</p>
-            <h3>Felmérés kevesebb, mint egy perc alatt</h3>
-            <p>
-              Az EWS Analyzer készülékkel lehetőség nyílik arra, hogy – még a betegség kialakulása
-              előtt – képet kapjunk a szervezetben történő változásokról. Az elektromágneses hullámok,
-              melyek az emberi szervezetből távoznak, pontosan utalnak a test állapotára!
-            </p>
-            <h4>Az EWS Analyzer előnyei</h4>
-            <ul class="detail-list">
-              <li>Kevesebb, mint egy perc alatt szolgáltat információt a test állapotáról.</li>
-              <li>Rendkívül könnyen és gyorsan láthatóvá válnak a szervezetben végbemenő folyamatok, még azt megelőzően, hogy biokémiai vagy strukturális szinten a problémák megjelennének.</li>
-            </ul>
-          </div>
-        </article>
-
-        <div class="ews-details">
-          <details class="accordion" open>
-            <summary>Kiknek ajánlott?</summary>
-            <ul class="detail-list">
-              <li>Hajszolt és stresszes életmódot folytató személyeknek, akik szeretnének gyors és komplex elemzést kapni egészségi állapotukról energetikai és fizikai szinten.</li>
-              <li>Fáradtságban vagy alvászavarban szenvedőknek, akik szeretnék tudni, milyen egyensúlyvesztésből származik a problémájuk.</li>
-              <li>Fellépő hormonzavarok esetében, főleg nőknél (hajhullás, hízás, ödémára való hajlam, pajzsmirigy-, illetve hasnyálmirigy-működési panaszok).</li>
-              <li>Mozgásszervi panaszok során (kopás, ízületi gyulladás), ha szeretnéd ismét lendületbe hozni magad.</li>
-              <li>Állandó puffadás, az emésztőrendszeri zavarok hátterében meghúzódó okok feltérképezésére.</li>
-              <li>A szív- és érrendszeri betegségek mögött húzódó tényezők feltárására.</li>
-              <li>Makacs testzsírok esetében, ha szeretnéd tudni, milyen tényezők hátráltatnak a leolvasztásukban.</li>
-            </ul>
-          </details>
-
-          <details class="accordion">
-            <summary>Milyen területekről kaphatunk információt?</summary>
-            <ul class="chip-cloud">
-              <li>Szív és vérkeringési rendszer</li>
-              <li>Emésztőrendszeri funkciók</li>
-              <li>Máj és epe funkciók</li>
-              <li>Szív és agyi keringési rendszer</li>
-              <li>Hasnyálmirigy funkciók</li>
-              <li>Vese funkciók</li>
-              <li>Tüdő funkciók</li>
-              <li>Agy és idegek</li>
-              <li>Csont</li>
-              <li>Meridiánok</li>
-              <li>Reumás csontbetegség</li>
-              <li>Vércukor</li>
-              <li>Fizikai állapot</li>
-              <li>Mérgek, toxinok</li>
-              <li>Nyomelemek, vitaminok</li>
-              <li>Prosztata</li>
-              <li>Mell analízis</li>
-              <li>Férfi szexuális funkciók</li>
-              <li>Nőgyógyászat</li>
-              <li>Bőr</li>
-              <li>Hormonrendszer</li>
-              <li>Immunrendszer</li>
-              <li>Nehézfémek</li>
-              <li>Szem funkciók</li>
-              <li>Elhízás</li>
-              <li>Aminosavak</li>
-              <li>Fül</li>
-              <li>Allergének</li>
-              <li>Pajzsmirigy</li>
-              <li>Koenzimek</li>
-              <li>Kötőszövet, kollagén</li>
-              <li>Paraziták</li>
-              <li>Lelki állapot</li>
-            </ul>
-          </details>
-
-          <details class="accordion">
-            <summary>A tesztelés legfontosabb szabályai</summary>
-            <ol class="steps compact">
-              <li><span>Ne igyon tesztelés előtt kb. 2 órával alkoholt, kávét és egyéb serkentő hatású italokat!</span></li>
-              <li><span>Ha megterhelő tevékenységet végzett, a tesztelés előtt pihenjen 1–2 órát!</span></li>
-              <li><span>A tesztelést nem teli, de nem is üres gyomorral kell végezni – optimálisan étkezés után 2 órával!</span></li>
-            </ol>
-          </details>
-
-          <p class="fineprint">
-            <strong>Fontos:</strong> a készülék a gyártó nyilatkozata alapján nem minősül
-            orvostechnikai eszköznek. A teszt eredményei csak referenciaként szolgálnak, nem orvosi
-            diagnosztikus értékűek, így orvosi diagnózist nem helyettesítenek.
-          </p>
-        </div>
-      </section>
-
       <!-- ============ KAPCSOLAT ============ -->
-      <section class="contact-strip" id="kapcsolat">
-        <div>
+      <section class="contact" id="kapcsolat" aria-labelledby="contact-title">
+        <div class="contact-copy">
           <p class="eyebrow">Kapcsolat &amp; időpontfoglalás</p>
-          <h2>Kérdésed van? Beszéljük át, melyik kezelés illik hozzád.</h2>
+          <h2 id="contact-title">Beszéljük át, melyik kezelés illik hozzád</h2>
           <p>Időpont egyeztetés alapján – hívj, vagy írj Facebookon!</p>
-        </div>
-        <div class="contact-actions">
-          <a class="button primary" href="tel:+36308695321">+36 30 869 5321</a>
-          <a class="button light" href="https://www.facebook.com/ildikomasszazs" target="_blank" rel="noopener">Facebook üzenet</a>
-          <a class="button outline" href="mailto:info@ildikoegeszsegsziget.hu">Email</a>
-        </div>
-      </section>
 
-      <section class="map-section" aria-labelledby="map-title">
-        <div class="section-head">
-          <p class="eyebrow">Szalon</p>
-          <h2 id="map-title">Teréz utca 13, Szeged</h2>
-          <p>6724 Szeged, Teréz utca 13.</p>
+          <div class="contact-actions">
+            <a class="btn btn-light btn-lg" href="tel:+36308695321">
+              <svg aria-hidden="true"><use href="#i-phone"/></svg>
+              +36 30 869 5321
+            </a>
+            <a class="btn btn-glass btn-lg" href="https://www.facebook.com/ildikomasszazs" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#i-chat"/></svg>
+              Üzenet Facebookon
+            </a>
+          </div>
+
+          <ul class="contact-list">
+            <li>
+              <svg aria-hidden="true"><use href="#i-pin"/></svg>
+              <span><strong>Cím</strong>6724 Szeged, Teréz utca 13.</span>
+            </li>
+            <li>
+              <svg aria-hidden="true"><use href="#i-clock"/></svg>
+              <span><strong>Nyitvatartás</strong>Egyeztetés alapján</span>
+            </li>
+            <li>
+              <svg aria-hidden="true"><use href="#i-mail"/></svg>
+              <span><strong>Email</strong><a href="mailto:info@ildikoegeszsegsziget.hu">info@ildikoegeszsegsziget.hu</a></span>
+            </li>
+          </ul>
         </div>
-        <div class="map-frame">
+        <div class="contact-map">
           <iframe
-            title="Ildikóegészségsziget térkép"
+            title="Ildikóegészségsziget térkép – Szeged, Teréz utca 13."
             src="https://www.google.com/maps?q=Ter%C3%A9z%20utca%2013%2C%20Szeged%2C%20Hungary%2C%206724&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen>
           </iframe>
+          <a class="map-link" href="https://www.google.com/maps/dir/?api=1&destination=Ter%C3%A9z%20utca%2013%2C%20Szeged%206724" target="_blank" rel="noopener">Útvonaltervezés →</a>
         </div>
       </section>
 
@@ -879,41 +866,42 @@
     </main>
 
     <footer class="footer">
-      <div class="footer-brand">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" focusable="false">
-            <path d="M32 56V31" />
-            <path d="M32 41c-7 0-13-5-15-12 8-1 14 1 18 7" />
-            <path d="M32 37c7 0 13-5 15-12-8-1-14 1-18 7" />
-            <path d="M32 30c-5-5-5-13 0-20 5 7 5 15 0 20Z" />
-            <path d="M22 56h20" />
-          </svg>
+      <a class="brand" href="#top">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-lotus"/></svg>
+        <span class="brand-text">
+          <strong>Ildikóegészségsziget</strong>
+          <small>nyugalom, érintés, egyensúly</small>
         </span>
-        <div>
-          <h2>Ildikóegészségsziget</h2>
-          <p>Masszázsok, aromaterápia, alakformálás, BEMER érterápia és wellness-felmérések Szegeden.</p>
-        </div>
-      </div>
-      <address>
-        <strong>Telefon</strong>
-        <a href="tel:+36308695321">+36 30 869 5321</a>
-        <strong>Cím</strong>
-        <span>Teréz utca 13, Szeged, 6724</span>
-        <strong>Email</strong>
-        <a href="mailto:info@ildikoegeszsegsziget.hu">info@ildikoegeszsegsziget.hu</a>
-        <strong>Facebook</strong>
-        <a href="https://www.facebook.com/ildikomasszazs" target="_blank" rel="noopener">facebook.com/ildikomasszazs</a>
-        <strong>Nyitvatartás</strong>
-        <span>Egyeztetés alapján</span>
-      </address>
+      </a>
+      <p>
+        <a href="tel:+36308695321">+36 30 869 5321</a> ·
+        <a href="https://www.facebook.com/ildikomasszazs" target="_blank" rel="noopener">Facebook</a> ·
+        <a href="mailto:info@ildikoegeszsegsziget.hu">Email</a>
+      </p>
     </footer>
+
+    <!-- Alsó gyorssáv telefonon -->
+    <nav class="dock" aria-label="Gyors elérés">
+      <a href="#szolgaltatasok">
+        <svg aria-hidden="true"><use href="#i-list"/></svg>
+        <span>Kezelések</span>
+      </a>
+      <a class="dock-main" href="tel:+36308695321">
+        <svg aria-hidden="true"><use href="#i-phone"/></svg>
+        <span>Időpont: hívás</span>
+      </a>
+      <a href="https://www.facebook.com/ildikomasszazs" target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#i-chat"/></svg>
+        <span>Üzenet</span>
+      </a>
+    </nav>
 
     <dialog class="lightbox" aria-label="Kép nagyítva">
       <button type="button" class="lightbox-close" aria-label="Bezárás">×</button>
-      <img src="" alt="">
+      <img src="data:," alt="">
       <p class="lightbox-caption"></p>
     </dialog>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

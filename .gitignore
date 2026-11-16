@@ -1,0 +1,8 @@
+# az Astro-kísérlet maradványai (astro ág) és segédeszközök
+node_modules/
+dist/
+.astro/
+
+# OS
+.DS_Store
+Thumbs.db

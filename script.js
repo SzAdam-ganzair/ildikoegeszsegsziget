@@ -1,183 +1,97 @@
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+/* Ildikóegészségsziget – egyoldalas változat */
 
-const menuButton = document.querySelector(".menu-toggle");
-const menu = document.querySelector("#menu");
+const PHONE_HREF = "tel:+36308695321";
+const FACEBOOK_URL = "https://www.facebook.com/ildikomasszazs";
 
-function closeMenu() {
-  if (!menuButton || !menu) return;
-  menu.classList.remove("open");
-  menuButton.classList.remove("is-open");
-  menuButton.setAttribute("aria-expanded", "false");
+/* ---------- Fejléc: görgetés után tömör háttér (asztali nézet) ---------- */
+const header = document.querySelector(".site-header");
+
+function updateHeader() {
+  header?.classList.toggle("is-solid", window.scrollY > 40);
 }
 
-if (menuButton && menu) {
-  menuButton.addEventListener("click", () => {
-    const isOpen = menu.classList.toggle("open");
-    menuButton.classList.toggle("is-open", isOpen);
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-  });
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
 
-  menu.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      closeMenu();
-    }
-  });
+/* ---------- Kezeléskártyák ---------- */
+const cards = [...document.querySelectorAll(".t-card")];
 
-  document.addEventListener("click", (event) => {
-    if (
-      menu.classList.contains("open") &&
-      !menu.contains(event.target) &&
-      !menuButton.contains(event.target)
-    ) {
-      closeMenu();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && menu.classList.contains("open")) {
-      closeMenu();
-      menuButton.focus();
-    }
-  });
-}
-
-const revealTargets = [
-  ...document.querySelectorAll(
-    ".intro, .section-head, .service-tile, .feature-media, .feature-copy, .treatment-card, .info-panel, .wide-card, .device-card, .feature-block-head, .callout, .accordion, .contact-strip, .map-section, .legal"
-  ),
-];
-
-revealTargets.forEach((element, index) => {
-  element.classList.add("reveal");
-
-  if (element.classList.contains("feature-media")) {
-    element.classList.add("reveal-left");
-  }
-
-  if (element.classList.contains("feature-copy")) {
-    element.classList.add("reveal-right");
-  }
-
-  if (
-    element.classList.contains("service-tile") ||
-    element.classList.contains("treatment-card") ||
-    element.classList.contains("info-panel")
-  ) {
-    element.style.setProperty("--reveal-delay", `${(index % 4) * 90}ms`);
-  }
+// Időpontkérő gombok minden lenyíló kártya aljára
+cards.forEach((card) => {
+  const name = card.querySelector(".t-head strong")?.textContent.trim() ?? "";
+  const cta = document.createElement("div");
+  cta.className = "t-cta";
+  cta.innerHTML = `
+    <a class="btn btn-primary" href="${PHONE_HREF}" aria-label="Időpontot kérek telefonon: ${name}">
+      <svg aria-hidden="true"><use href="#i-phone"/></svg>Időpontot kérek
+    </a>
+    <a class="btn btn-quiet" href="${FACEBOOK_URL}" target="_blank" rel="noopener">
+      <svg aria-hidden="true"><use href="#i-chat"/></svg>Üzenet Facebookon
+    </a>`;
+  (card.querySelector(".t-text") ?? card.querySelector(".t-body")).append(cta);
 });
 
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.16,
-      rootMargin: "0px 0px -8% 0px",
+// Ha a link egy kártyára mutat (pl. #bemer), nyíljon le
+function openFromHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (target?.classList.contains("t-card")) {
+    target.open = true;
+    requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+  }
+}
+
+openFromHash();
+window.addEventListener("hashchange", openFromHash);
+
+// Megnyitáskor a kártya teteje maradjon látható
+cards.forEach((card) => {
+  card.addEventListener("toggle", () => {
+    if (!card.open) return;
+    const top = card.getBoundingClientRect().top;
+    if (top < 0) card.scrollIntoView({ block: "start" });
+  });
+});
+
+/* ---------- Kategóriasáv: az aktuális szakasz kiemelése ---------- */
+const chipScroll = document.querySelector(".chipbar-scroll");
+const chips = chipScroll ? [...chipScroll.querySelectorAll("a")] : [];
+const sections = chips.map((chip) => document.querySelector(chip.getAttribute("href"))).filter(Boolean);
+
+function setActiveChip(id) {
+  chips.forEach((chip) => {
+    const active = chip.getAttribute("href") === `#${id}`;
+    if (active === chip.classList.contains("is-active")) return;
+    chip.classList.toggle("is-active", active);
+    if (active) {
+      chip.setAttribute("aria-current", "true");
+      // csak a sávot görgetjük vízszintesen, az oldalt nem
+      const left = chip.offsetLeft - (chipScroll.clientWidth - chip.offsetWidth) / 2;
+      chipScroll.scrollTo({ left, behavior: "smooth" });
+    } else {
+      chip.removeAttribute("aria-current");
     }
-  );
-
-  revealTargets.forEach((element) => revealObserver.observe(element));
-} else {
-  revealTargets.forEach((element) => element.classList.add("is-visible"));
+  });
 }
 
-const siteHeader = document.querySelector(".site-header");
-const scrollProgress = document.querySelector(".scroll-progress");
-
-function updateHeaderOnScroll() {
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-  if (siteHeader) {
-    siteHeader.classList.toggle("is-scrolled", scrollTop > 8);
-  }
-
-  if (scrollProgress) {
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    scrollProgress.style.setProperty("--scroll-progress", `${Math.min(100, Math.max(0, progress))}%`);
-  }
-}
-
-updateHeaderOnScroll();
-window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
-
-const navLinks = [
-  ...document.querySelectorAll(".menu a[href^='#'], .mobile-quick-nav a[href^='#']"),
-];
-const spySections = [
-  ...new Set(navLinks.map((link) => link.getAttribute("href"))),
-]
-  .map((href) => document.querySelector(href))
-  .filter(Boolean);
-
-if (navLinks.length && spySections.length && "IntersectionObserver" in window) {
-  const spyObserver = new IntersectionObserver(
+if (sections.length && "IntersectionObserver" in window) {
+  const visible = new Set();
+  const spy = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach((link) => {
-          link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
-        });
+        if (entry.isIntersecting) visible.add(entry.target);
+        else visible.delete(entry.target);
       });
+      const current = sections.find((section) => visible.has(section));
+      if (current) setActiveChip(current.id);
     },
-    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    { rootMargin: "-25% 0px -65% 0px" }
   );
-
-  spySections.forEach((section) => spyObserver.observe(section));
+  sections.forEach((section) => spy.observe(section));
 }
 
-const heroMedia = document.querySelector(".hero-media");
-
-if (heroMedia && !prefersReducedMotion) {
-  let ticking = false;
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const offset = Math.min(window.scrollY * 0.18, 90);
-        heroMedia.style.setProperty("--parallax-y", `${offset}px`);
-        ticking = false;
-      });
-    },
-    { passive: true }
-  );
-}
-
-/* Kezelések szűrése kategória szerint */
-const filterButtons = [...document.querySelectorAll(".filter-bar button")];
-const serviceTiles = [...document.querySelectorAll(".service-tile")];
-
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-
-    filterButtons.forEach((other) => {
-      const active = other === button;
-      other.classList.toggle("is-active", active);
-      other.setAttribute("aria-pressed", String(active));
-    });
-
-    serviceTiles.forEach((tile) => {
-      const cats = (tile.dataset.cat || "").split(" ");
-      const visible = filter === "all" || cats.includes(filter);
-      tile.classList.toggle("is-hidden", !visible);
-      if (visible) tile.classList.add("is-visible");
-    });
-  });
-});
-
-/* Galéria nagyító */
+/* ---------- Képnagyító ---------- */
 const lightbox = document.querySelector(".lightbox");
 
 if (lightbox && typeof lightbox.showModal === "function") {
@@ -188,7 +102,7 @@ if (lightbox && typeof lightbox.showModal === "function") {
     button.addEventListener("click", () => {
       const img = button.querySelector("img");
       if (!img) return;
-      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.src = button.dataset.full || img.currentSrc || img.src;
       lightboxImg.alt = img.alt;
       lightboxCaption.textContent = img.alt;
       lightbox.showModal();
@@ -198,20 +112,5 @@ if (lightbox && typeof lightbox.showModal === "function") {
   lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.close());
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) lightbox.close();
-  });
-}
-
-if (hasFinePointer && !prefersReducedMotion) {
-  document.querySelectorAll(".button.primary").forEach((button) => {
-    button.addEventListener("pointermove", (event) => {
-      const rect = button.getBoundingClientRect();
-      const offsetX = (event.clientX - rect.left - rect.width / 2) * 0.18;
-      const offsetY = (event.clientY - rect.top - rect.height / 2) * 0.35;
-      button.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-    });
-
-    button.addEventListener("pointerleave", () => {
-      button.style.transform = "";
-    });
   });
 }
