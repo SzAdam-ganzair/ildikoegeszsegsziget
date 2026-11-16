@@ -44,14 +44,14 @@ if (menuButton && menu) {
 
 const revealTargets = [
   ...document.querySelectorAll(
-    ".intro, .section-head, .service-card, .feature-image, .feature-copy, .treatment-card, .info-panel, .contact-strip, .map-section, .legal"
+    ".intro, .section-head, .service-tile, .feature-media, .feature-copy, .treatment-card, .info-panel, .wide-card, .device-card, .feature-block-head, .callout, .accordion, .contact-strip, .map-section, .legal"
   ),
 ];
 
 revealTargets.forEach((element, index) => {
   element.classList.add("reveal");
 
-  if (element.classList.contains("feature-image")) {
+  if (element.classList.contains("feature-media")) {
     element.classList.add("reveal-left");
   }
 
@@ -60,7 +60,7 @@ revealTargets.forEach((element, index) => {
   }
 
   if (
-    element.classList.contains("service-card") ||
+    element.classList.contains("service-tile") ||
     element.classList.contains("treatment-card") ||
     element.classList.contains("info-panel")
   ) {
@@ -154,15 +154,54 @@ if (heroMedia && !prefersReducedMotion) {
   );
 }
 
-if (hasFinePointer && !prefersReducedMotion) {
-  document.querySelectorAll(".service-card").forEach((card) => {
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty("--spot-x", `${event.clientX - rect.left}px`);
-      card.style.setProperty("--spot-y", `${event.clientY - rect.top}px`);
+/* Kezelések szűrése kategória szerint */
+const filterButtons = [...document.querySelectorAll(".filter-bar button")];
+const serviceTiles = [...document.querySelectorAll(".service-tile")];
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+
+    filterButtons.forEach((other) => {
+      const active = other === button;
+      other.classList.toggle("is-active", active);
+      other.setAttribute("aria-pressed", String(active));
+    });
+
+    serviceTiles.forEach((tile) => {
+      const cats = (tile.dataset.cat || "").split(" ");
+      const visible = filter === "all" || cats.includes(filter);
+      tile.classList.toggle("is-hidden", !visible);
+      if (visible) tile.classList.add("is-visible");
+    });
+  });
+});
+
+/* Galéria nagyító */
+const lightbox = document.querySelector(".lightbox");
+
+if (lightbox && typeof lightbox.showModal === "function") {
+  const lightboxImg = lightbox.querySelector("img");
+  const lightboxCaption = lightbox.querySelector(".lightbox-caption");
+
+  document.querySelectorAll("[data-gallery] button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const img = button.querySelector("img");
+      if (!img) return;
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = img.alt;
+      lightbox.showModal();
     });
   });
 
+  lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.close());
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+}
+
+if (hasFinePointer && !prefersReducedMotion) {
   document.querySelectorAll(".button.primary").forEach((button) => {
     button.addEventListener("pointermove", (event) => {
       const rect = button.getBoundingClientRect();
