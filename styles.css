@@ -339,7 +339,7 @@ figure {
   width: 100%;
   max-width: var(--maxw);
   margin-inline: auto;
-  padding: calc(var(--header-h) + 24px) var(--pad) 92px;
+  padding: calc(var(--header-h) + 24px) var(--pad) 64px;
 }
 
 .hero-inner > * {
@@ -411,7 +411,7 @@ figure {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   max-width: var(--maxw);
-  margin: -64px auto 0;
+  margin: -36px auto 0;
   padding-inline: var(--pad);
   list-style: none;
 }
@@ -459,8 +459,9 @@ figure {
   font-weight: inherit;
 }
 
+/* Telefonon az alsó sávban mindig ott a hívás, ezért ez a csempe csak asztali nézetben látszik */
 .statstrip .is-accent {
-  grid-column: 1 / -1;
+  display: none;
   padding: 0;
   background: var(--plum);
   color: var(--gold-soft);
@@ -1876,14 +1877,6 @@ figure {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .statstrip {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .statstrip .is-accent {
-    grid-column: auto;
-  }
-
   .tiles {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2042,6 +2035,7 @@ figure {
   }
 
   .statstrip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     margin-top: -56px;
     padding-inline: var(--pad);
@@ -2063,6 +2057,7 @@ figure {
   }
 
   .statstrip .is-accent {
+    display: flex;
     padding: 0;
     border-radius: 0 var(--r) var(--r) 0;
   }
